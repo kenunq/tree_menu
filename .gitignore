@@ -1,0 +1,8 @@
+db.sqlite3
+
+.git
+
+**/migrations/**
+!**/migrations
+!**/migrations/__init__.py
+

@@ -1,0 +1,31 @@
+{% load main_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% draw_menu "1" %}
+{% draw_menu "Folder1" %}
+</body>
+<script>
+     const url = document.URL
+     var elements = document.querySelectorAll(`[href='${url}']`);
+     for (let i of elements) {
+        if(i.href == document.URL){
+            var element = i
+            i.style.background = 'green'
+            while(element.parentNode.tagName != "BODY"){
+                var parent = element.parentNode
+                if (parent.tagName == "DETAILS"){
+                    parent.setAttribute('open', '')
+                }
+                element = parent
+            }
+        }
+     }
+
+</script>
+</html>
